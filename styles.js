@@ -5,7 +5,8 @@ const styles = theme => ({
   main:{
     height: '100vh',
     display:'flex',
-    alignItems: 'center'
+    alignItems: 'center',
+    padding: 100
   }
 });
 
