@@ -1,26 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './subproject.css';
+import Dialog from '@material-ui/core/Dialog';
+import styles from './styles';
+import { withStyles } from '@material-ui/core';
 
-function SubProject() {
+function SubProject({ classes }) {
+  const [open, setOpen] = useState(false);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn SubProject
-        </a>
-      </header>
+      <button onClick={() => setOpen(!open)}>Click</button>
+      <Dialog onClose={() => setOpen(!open)} open={open} classes={{ root: classes.root }}>
+        <div className={classes.main}>
+
+          Display content
+        </div>
+      </Dialog>
     </div>
   );
 }
 
-export default SubProject;
+export default withStyles(styles)(SubProject);
